@@ -389,4 +389,11 @@ hr {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+  .scaling-button {
+    transition: transform 0.3s ease;
+  }
+  
+  .scaling-button:hover {
+    transform: scale(1.1); /* Increase size by 10% on hover */
+  }
 }

@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import 'antd/dist/reset.css'; 
+import './index.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home/index.jsx'
 import Login from './pages/Login/index.jsx'
 import Register from './pages/Register/index.jsx'
@@ -16,6 +17,7 @@ export const API_URL = import.meta.env.VITE_API_URL;
 function App() {   
   return (
     <div className="App">
+      <Navbar/>
         <BrowserRouter>
           <Routes>
               <Route path="/" element={<Home/>}/>

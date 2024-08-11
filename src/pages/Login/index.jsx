@@ -1,17 +1,17 @@
 import {Button, Form, Input, message} from "antd";
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import { LoginUser } from "../../calls/users";
 
 function Login() {
-
     const onFinish = async (values) => {
         const response = await LoginUser(values);
-        
         if(response.status == "200") {
             console.log(response);
             message.success("Login successfull")
             localStorage.setItem("token", response.data.token)
-            window.location.href="/";
+            setTimeout(() => {
+              window.location.href="/";
+            }, 2000)
         } else {
             message.error(response.data.message)
         }
